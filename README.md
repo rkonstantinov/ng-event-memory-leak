@@ -1,6 +1,16 @@
 # NgScrollLeak
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
+This is an [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0. generated project which demonstrates a memory leak with Angular 5.0.1 and zone.js 0.8.18.
+
+### Steps to reproduce
+
+  1. Click on the button to show the element - this will attach and instantly detach the scroll event handler
+  1. Click again on the button to hide it
+  1. Open Chrome dev tools and take a Memory snapshot
+  1. Switch to **Containment**
+  1. Inspect **Detached DOM tree**. There should be one entry which is our div element
+
+A short screencast demonstrating the issue can be found [here](https://raw.githubusercontent.com/rkonstantinov/ng-event-memory-leak/master/scroll-event-leak.webm)
 
 ## Development server
 
